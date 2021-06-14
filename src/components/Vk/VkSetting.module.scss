@@ -1,0 +1,125 @@
+h2{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+}
+.VkSetting{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .save_data{
+        background: #4285f4;
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+    .setting{
+        position: relative;
+        overflow-y: auto;
+        max-height: 80vh;
+        padding: 0 20px;
+        h3{
+            font-weight: 600;
+            margin-top: 20px;
+            border-bottom: 2px dashed #ddd;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        .setting_item{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 20px 0;
+            p{
+                font-weight: 600;
+                font-size: 14px;
+                display: block;
+                width: 200px;
+            }
+            input{
+                border: 1px solid #ddd;
+                padding: 5px 20px;
+                border-radius: 6px;
+                // outline: none;
+                margin: 0 20px;
+            }
+        }
+    }
+    .result{
+        padding: 20px;
+        width: 50%;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12),inset 0 -1px 0 0 #dadce0;
+        border-radius: 6px;
+        max-height: 80vh;
+        overflow-y: auto;
+        .main_result_block{
+            display: flex;
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                margin-right: 15px;
+            }
+            p{
+                font-weight: 600;
+                font-size: 28px;
+            }
+        }
+        .photos_block{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 10px 0;
+            img{
+                width: 80px;
+                height: 80px;
+                margin: 0 10px ;
+            }
+        }
+        p{
+            margin: 20px 0;
+        }
+        .post_data{
+            margin-bottom: 20px;
+            span{
+                display: block;
+            }
+            .author{
+                font-size: 20px;
+                font-weight: 600;
+                display: block;
+            }
+            .text{
+                padding: 10px 0;
+            }
+            .date{
+                padding: 5px 0;
+                color: #ccc;
+            }
+            img{
+                max-width: 200px;
+                margin: 0 auto;
+                height: auto;
+                border-radius: 4px;
+            }
+            .post_assets{
+                display: flex;
+                align-items: center;
+                span{
+                    margin: 0 10px;
+                    display: flex;
+                    align-items: center;
+                    i{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

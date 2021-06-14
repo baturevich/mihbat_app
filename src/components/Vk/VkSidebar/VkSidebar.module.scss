@@ -1,0 +1,52 @@
+.sidebar{
+    ul{
+        li{
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 4.5px 0;
+            padding-left: 7px;
+            padding-right: 35px;
+            cursor: pointer;
+            border-radius: 4px;
+            div{
+                margin-right: 10px;
+                margin-left: -3px;
+                svg{
+                    color: #5181b8;
+                    margin-bottom: 1px;
+                }
+            }
+            span{
+                position: absolute;
+                top: 4.5px;
+                right: 2px;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                background: #aeb7c2;
+                color: #fff;
+                font-size: 0.85em;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                padding-left: 7px;
+                padding-top: 1px;
+                font-weight: 500;
+            }
+            font-size: 0.83em;
+            letter-spacing: .01em;
+            &:hover{
+                background: #aeb7c21f;
+            }
+        }
+        hr{
+            margin: 0;
+           margin-top: 7px;
+           margin-bottom: 11px;
+        }
+        &:first-child{
+            padding-top: -9px;
+        }
+    }
+}
