@@ -138,6 +138,7 @@
             background: #1938a2;
             padding: 50px 25px;
             width: 350px;
+            height: 270px;
             text-align: center;
             border-radius: 6px;
             margin-bottom: 20px;
@@ -224,6 +225,98 @@
 
         p {
             text-align: center;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .wrapper{
+        .header{
+            flex-wrap: wrap;
+            text-align: center;
+            .logo{
+               flex-wrap: wrap;
+               p{
+                   margin: 10px 0;
+                   text-align: left;
+               }
+            }
+            .header_phone {
+                margin: 10px 0;
+            }
+        }
+        .offers{
+            margin-top: 20px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            .offer{
+                width: 100%;
+                .offer_title{
+                    font-size: 32px;
+                }
+                .offer_text{
+                    height: auto;
+                }
+                span{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .services {
+    
+            .service_group {
+                flex-wrap: wrap;
+            }
+        }
+        .why_trust_us {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+    
+            h3 {
+                font-weight: 700;
+                font-size: 32px;
+                text-align: center;
+            }
+    
+            .statistics {
+                margin-top: 50px;
+                display: flex;
+                z-index: 2;
+    
+                img {
+                    width: 100px;
+                    height: auto;
+                }
+    
+                .stat_list {
+                    padding-top: 65px;
+    
+                    li {
+                        font-size: 18px;
+                        letter-spacing: 130%;
+                        padding-left: 10px;
+    
+                        span {
+                            font-weight: 700;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .stat_item_1 {
+                        margin-bottom: 95px;
+                    }
+    
+                    .stat_item_2 {
+                        margin-bottom: 50px;
+                    }
+    
+                    .stat_item_3 {
+                        margin-bottom: 55px;
+                    }
+                }
+            }
         }
     }
 }

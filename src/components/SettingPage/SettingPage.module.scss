@@ -33,6 +33,16 @@
             background: #fff;
             border-radius: 6px;
             padding: 10px;
+            .setting_btn{
+                display: inline-block;
+                background: #4285f4;
+                border-radius: 6px;
+                width: 100%;
+                padding: 8px 15px;
+                color: #fff;
+                cursor: pointer;
+                margin-bottom: 15px;
+            }
             .input_block{
                 display: flex;
                 align-items: center;
@@ -61,10 +71,42 @@
                     cursor: pointer;
                     transition: all .2s ease;
                     color: #444;
+                    display: flex;
+                    align-items: center;
+                    i{
+                        color: red;
+                        margin-left: auto;
+                    }
                     &:hover{
                         box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12),inset 0 -1px 0 0 #dadce0;
                     }
                 }
+            }
+        }
+        .setting_order{
+            width: 45%;
+            height: 100vh;
+        }
+    }
+    .setting_btn{
+        display: inline-block;
+        background: #4285f4;
+        border-radius: 6px;
+        width: 100%;
+        padding: 8px 15px;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width:768px) {
+    .admin_wrapper{
+        h1{
+            font-size: 22px;
+        }
+        .admin_panel{
+            .setting_web{
+                width: 100%;
             }
         }
     }
