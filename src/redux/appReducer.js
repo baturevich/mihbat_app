@@ -8,11 +8,15 @@ const ADDSERVICE = "ADDSERVICE"
 const DELETESERVICE = "DELETESERVICE"
 const ADDORDER = "ADDORDER"
 const DELETEORDER = "DELETEORDER"
+const AUTHADMIN = "AUTHADMIN"
+const ACTIVEERRORMODE = "ACTIVEERRORMODE"
 
 const initialState = {
     initializing: false,
     isInvestModalOpen: false,
     isStartUpModalOpen: false,
+    is_auth: false,
+    is_error_mode: false,
     slogan: "беремся даже за самые невероятные идеи",
     invest_offer:"Если вас интересуют возможности инвестиций в самые разнообразные стартапы от простых торговых павильонов и магазинов до серьезных  финансовых  вложений в строительство и денежное управление то  это кнопка для вас! ",
     startup_offer:"Если у вас есть свой стартап-проект, идея, команда или компания. Если вы ищете инвестиции и хотите познакомиться с инвесторами. Получить грамотную консультацию по различным вопросом касающихся банковской деятельности, административных ресурсов и деловым связям то тогда эта кнопка для вас!",
@@ -76,6 +80,8 @@ const appReducer = (state = initialState, action)=>{
         }
         case  ADDSERVICE:{
             return{...state, service_list:[...state.service_list, action.new_service]}
+        }case  AUTHADMIN:{
+            return{...state, is_auth: true}
         }
         case  DELETESERVICE:{
             return {
@@ -108,7 +114,9 @@ const appReducer = (state = initialState, action)=>{
                 return{ ...state, isStartUpModalOpen: true}
             }
         }
-
+        case ACTIVEERRORMODE :{
+            return{ ...state, is_error_mode: true}
+        }
         default:{
             return state
         }
@@ -123,5 +131,7 @@ export const addServiceAC = (new_service)=>({type: ADDSERVICE,new_service})
 export const deleteServiceAC = (service_id)=>({type: DELETESERVICE, service_id})
 export const addOrderAC = (new_order)=>({type:ADDORDER, new_order})
 export const deleteOrderAC = (order_id)=>({type:DELETEORDER, order_id})
+export const authAdminAC = ()=>({type: AUTHADMIN})
+export const activeErrorModeAC = ()=>({type: ACTIVEERRORMODE})
 
 export default appReducer

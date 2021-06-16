@@ -42,7 +42,7 @@ class MainPage extends React.Component {
                             {this.props.appData.service_list.map(i => {
                                 if(i.id <=3){
                                     return (
-                                        <div className={s.service} key={Math.random()*5}>
+                                        <div className={s.service} key={i.id}>
                                             <div className={s.service_name}>{i.service_title}</div>
                                             <div className={s.service_text}>{i.service_text}</div>
                                         </div>
@@ -52,9 +52,21 @@ class MainPage extends React.Component {
                         </div>
                         <div className={s.service_group}>
                         {this.props.appData.service_list.map(i => {
-                                if(i.id > 3){
+                                if(i.id > 3 & i.id<7){
                                     return (
-                                        <div className={s.service} key={Math.random()*5}>
+                                        <div className={s.service} key={i.id}>
+                                            <div className={s.service_name}>{i.service_title}</div>
+                                            <div className={s.service_text}>{i.service_text}</div>
+                                        </div>
+                                    )
+                                }
+                            })}
+                        </div>
+                        <div className={s.service_group}>
+                        {this.props.appData.service_list.map(i => {
+                                if(i.id > 6 & i.id <10){
+                                    return (
+                                        <div className={s.service} key={i.id}>
                                             <div className={s.service_name}>{i.service_title}</div>
                                             <div className={s.service_text}>{i.service_text}</div>
                                         </div>
@@ -80,7 +92,7 @@ class MainPage extends React.Component {
                 </div>
                 <div className={s.container}>
                     <div className={s.copyright}>
-                        <NavLink to="/admin"><p>OOO ТК "МИХБАТ" © 2013-2021</p></NavLink>
+                        <NavLink to="/login"><p>OOO ТК "МИХБАТ" © 2013-2021</p></NavLink>
                     </div>
                 </div>
                 <Particles />
