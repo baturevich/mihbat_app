@@ -1,6 +1,8 @@
 import React from 'react'
 import s from "./MainPage.module.scss"
 import Particles from 'react-particles-js';
+import { NavLink } from 'react-router-dom'
+
 import diag_img from "../../img/token-top.png"
 import InvestModalContainer from './InvestForm/InvestFormContainer';
 import StartUpFormContainer from './StartUpForm/StartUpFormContainer';
@@ -77,7 +79,9 @@ class MainPage extends React.Component {
                     </div>
                 </div>
                 <div className={s.container}>
-                    <div className={s.copyright}><p>OOO ТК "МИХБАТ" © 2013-2021</p></div>
+                    <div className={s.copyright}>
+                        <NavLink to="/admin"><p>OOO ТК "МИХБАТ" © 2013-2021</p></NavLink>
+                    </div>
                 </div>
                 <Particles />
             </div>

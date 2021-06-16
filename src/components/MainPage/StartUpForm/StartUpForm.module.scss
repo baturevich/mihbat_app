@@ -60,6 +60,7 @@
             background: #062489;
             padding: 10px;
             width: 100%;
+            color: #fff;
 
             &::placeholder {
                 color: #cbe5ff;
@@ -73,7 +74,7 @@
             align-items: center;
         }
 
-        span {
+        .add_order {
             display: inline-block;
             margin-top: 40px;
             margin-left: auto;
@@ -105,6 +106,18 @@
             &:hover:after {
                 opacity: 1;
             }
+        }
+    }
+    .order_done{
+        font-size: 32px;
+        text-align: center;
+        font-weight: 700;
+        p{
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        span{
+            font-size: 102px;
         }
     }
 }

@@ -13,10 +13,13 @@
         font-size: 38px;
         margin-bottom: 50px;
         text-align: center;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        margin-left: 37%;
     }
     .admin_panel {
         display: flex;
-        align-items: center;
         text-align: center;
         h3{
             font-weight: 700;
@@ -84,19 +87,64 @@
             }
         }
         .setting_order{
-            width: 45%;
-            height: 100vh;
+            border-left: 2px solid #ddd;
+            width: 55%;
+            padding: 10px 20px 20px 20px;
+            .order_list{
+                .order_item{
+                    position: relative;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                    border-radius: 6px;
+                    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+                    margin-bottom: 30px;
+                    div{
+                        margin: 7px 0;
+                        color: #5f6368;
+                    }
+                    span{
+                        color: #000;
+                        font-weight: 500;
+                    }
+                    .order_type{
+                        font-weight: 700;
+                        color: #222;
+                        p{
+                            display: inline-block;
+                            margin-left: 20px;
+                            font-weight: 500;
+                            color: #5f6368;
+                        }
+                    }
+                    .order_text{
+                        display: flex;
+                        flex-direction: column;
+                        line-height: 120%;
+                    }
+                    .order_delete{
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
-    .setting_btn{
-        display: inline-block;
+    .link_btn{
         background: #4285f4;
         border-radius: 6px;
-        width: 100%;
+        width: 200px;
         padding: 8px 15px;
+        font-size: 14px;
         color: #fff;
         cursor: pointer;
-        margin-bottom: 15px;
+        margin-left: auto;
+        margin-top: 3px;
+    
     }
 }
 @media screen and (max-width:768px) {

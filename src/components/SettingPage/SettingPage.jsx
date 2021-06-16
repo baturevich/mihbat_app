@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { addServiceAC, deleteServiceAC, setNewPageDataAC } from '../../redux/appReducer'
+import { addServiceAC, deleteOrderAC, deleteServiceAC, setNewPageDataAC } from '../../redux/appReducer'
 import s from './SettingPage.module.scss'
 
 const SettingPage = (props) => {
@@ -32,7 +32,7 @@ const SettingPage = (props) => {
     return (
         <div className={s.admin_wrapper}>
             <div className={s.container}>
-                <h1>Администрирование сайта</h1>
+                <h1>Админ-панель <NavLink to="/MainPage" className={s.link_btn}>Перейти на сайт</NavLink></h1>
                 <div className={s.admin_panel}>
                     <div className={s.setting_web}>
                         <h3>1. Главная информация</h3>
@@ -104,7 +104,27 @@ const SettingPage = (props) => {
                         <span className={s.setting_btn} onClick={() => setNewPageData()}>Сохранить изменения</span>
                     </div>
                     <div className={s.setting_order}>
-                        <NavLink to="/MainPage" className={s.setting_btn}>Перейти на сайт</NavLink>
+                        <div className={s.order_list}>
+                        <h3>Список заявок</h3>
+                        {props.appData.order_list.reverse().map(o=>{
+                            let is_investor = o.order_type == "Инвестор" ? true : false
+                            return(
+                                <div className={s.order_item} key={Math.random()*5}>
+                                <div className={s.order_type}>
+                                    <i className="fa fa-user"></i> {o.order_type} {o.order_name} 
+                                    <p>{o.order_date}</p>
+                                </div>
+                                <div className={s.order_sfera}>{is_investor ? "Сфера" : "Возраст"}: <span>{o.order_sfera}</span></div>
+                                <div className={s.order_contact}>Контакты: <span>{o.order_contact}</span></div>
+                                <div className={s.order_summ}>{is_investor ? "Обьём инвестиций" : " Планируемая доходность"}: <span>{o.order_summ}</span></div>
+                                <div className={s.order_profit}>{is_investor ? "Ожидаемая доходность" : "Необходимо финансов"}: <span>{o.order_profit}</span></div>
+                                <div className={s.order_srok}>{is_investor ? "Ожидаемая доходность" : "Период развития"}: <span>{o.order_srok}</span></div>
+                                <div className={s.order_text}>Краткое описание проекта: <span>{o.order_text}</span></div>
+                                <div className={s.order_delete}onClick={()=>props.deleteOrderAC(o.id)}><i className="fa fa-trash"></i></div>
+                            </div>
+                            )
+                        })}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,4 +133,4 @@ const SettingPage = (props) => {
 }
 const mapStateToProps = (state) => ({ appData: state.appData })
 
-export default connect(mapStateToProps, { setNewPageDataAC, addServiceAC, deleteServiceAC })(SettingPage)
+export default connect(mapStateToProps, { setNewPageDataAC, addServiceAC, deleteServiceAC, deleteOrderAC})(SettingPage)

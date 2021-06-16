@@ -222,9 +222,14 @@
         align-items: center;
         text-align: center;
         justify-content: center;
-
+        z-index: 2;
+        a{
+            cursor: pointer;
+            color: #fff;
+        }
         p {
             text-align: center;
+            color: #fff;
         }
     }
 }

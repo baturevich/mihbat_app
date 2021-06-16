@@ -1,9 +1,13 @@
+import { GetCurrentDate } from "../utils/getCurrentDate"
+
 const INITIALIZING = "INITIALIZING"
 const TOGGLEINVESTMODAL = "TOGGLEINVESTMODAL"
 const TOGGLESTARTUPMODAL = "TOGGLESTARTUPMODAL"
 const SETNEWPAGEDATA = "SETNEWPAGEDATA"
 const ADDSERVICE = "ADDSERVICE"
 const DELETESERVICE = "DELETESERVICE"
+const ADDORDER = "ADDORDER"
+const DELETEORDER = "DELETEORDER"
 
 const initialState = {
     initializing: false,
@@ -31,6 +35,24 @@ const initialState = {
     year_cash_flow: "24.000.000",
     count_ready_startup: "31",
     count_seller_project: "16",
+    order_list:[
+        {id:1, order_type: "Инвестор",order_name:"Евгений",order_sfera:"Строительство",
+            order_contact:"8(909) 085-32-83",order_profit:"100.000₽ в неделю",order_srok:"3 месяца",
+            order_summ :"2.000.000₽",order_date: "16 Июня в 15:29",
+            order_text:"Комплексный аутсорсинг управления проектом любой сложности - от общих представительских функций и маркетинга/рекламы, до открытия компании и постановки системы маркетинга и продаж"
+        },
+        {id:2, order_type: "Стартапер",order_name:"Кирилл",order_sfera:"Строительство",
+            order_contact:"8(909) 085-32-83",order_profit:"500.000₽ в неделю",order_srok:"3 месяца",
+            order_summ :"4.000.000₽", order_date: "4 Июня в 18:39",
+            order_text:"Комплексный аутсорсинг управления проектом любой сложности - от общих представительских функций и маркетинга/рекламы, до открытия компании и постановки системы маркетинга и продаж"
+        },
+        {id:3, order_type: "Инвестор",order_name:"Егор",order_sfera:"Строительство",
+            order_contact:"8(909) 085-32-83",order_profit:"250.000₽ в месяц",order_srok:"20 дней",
+            order_summ :"6.000.000₽",order_date: "21 Мая в 11:43",
+            order_text:"Комплексный аутсорсинг управления проектом любой сложности - от общих представительских функций и маркетинга/рекламы, до открытия компании и постановки системы маркетинга и продаж"
+        },
+    ],
+    is_done_order: false,
 }
 
 const appReducer = (state = initialState, action)=>{
@@ -61,6 +83,17 @@ const appReducer = (state = initialState, action)=>{
                 service_list: state.service_list.filter(p => p.id !== action.service_id)
             }
         }
+        case  ADDORDER:{
+            let new_order = {...action.new_order}
+            new_order['order_date'] = GetCurrentDate()
+            return{...state, order_list:[...state.order_list, new_order],is_done_order: true}
+        }
+        case  DELETEORDER:{
+            return {
+                ...state,
+                order_list: state.order_list.filter(p => p.id !== action.order_id)
+            }
+        }
         case TOGGLEINVESTMODAL:{
             if(state.isInvestModalOpen){
                 return{ ...state, isInvestModalOpen: false}
@@ -88,5 +121,7 @@ export const toggleStartUpModalAC = ()=>({type: TOGGLESTARTUPMODAL})
 export const setNewPageDataAC = (new_data)=>({type: SETNEWPAGEDATA, new_data })
 export const addServiceAC = (new_service)=>({type: ADDSERVICE,new_service})
 export const deleteServiceAC = (service_id)=>({type: DELETESERVICE, service_id})
+export const addOrderAC = (new_order)=>({type:ADDORDER, new_order})
+export const deleteOrderAC = (order_id)=>({type:DELETEORDER, order_id})
 
 export default appReducer

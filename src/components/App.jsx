@@ -12,7 +12,7 @@ class App extends React.Component {
   render(){
     return (
       <>
-       <Redirect to="/admin"/>
+       <Redirect to="/MainPage"/>
        <Route path="/MainPage"  render={()=> <MainPageContainer/>} />
        <Route path="/admin" render={()=><SettingPageContainer/>}/>
       </>
