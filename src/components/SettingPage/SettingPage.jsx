@@ -104,7 +104,7 @@ const SettingPage = (props) => {
                         <span className={s.setting_btn} onClick={() => setNewPageData()}>Сохранить изменения</span>
                     </div>
                     <div className={s.setting_order}>
-                        <NavLink to="/newsfeed" className={s.setting_btn}>Перейти на сайт</NavLink>
+                        <NavLink to="/MainPage" className={s.setting_btn}>Перейти на сайт</NavLink>
                     </div>
                 </div>
             </div>
