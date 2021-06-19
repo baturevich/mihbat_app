@@ -28,7 +28,6 @@ const SettingPage = (props) => {
     const setNewPageData = () => {
         props.setNewPageDataAC(state)
     }
-    console.log(props.appData);
     return (
         <div className={s.admin_wrapper}>
             <div className={s.container}>

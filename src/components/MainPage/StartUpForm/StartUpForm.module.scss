@@ -121,3 +121,11 @@
         }
     }
 }
+@media screen and(max-width:768px) {
+    .wrapper{
+        width: 90% !important;
+        .add_order{
+            margin: 0 auto;
+        }
+    }
+}

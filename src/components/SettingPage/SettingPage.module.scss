@@ -100,6 +100,10 @@
                     border-radius: 6px;
                     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
                     margin-bottom: 30px;
+                    transition: all .2s ease;
+                    &:hover{
+                        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12),inset 0 -1px 0 0 #dadce0;
+                    }
                     div{
                         margin: 7px 0;
                         color: #5f6368;
@@ -151,9 +155,14 @@
     .admin_wrapper{
         h1{
             font-size: 22px;
+            margin-left: 0;
         }
         .admin_panel{
+            flex-wrap: wrap;
             .setting_web{
+                width: 100%;
+            }
+            .setting_order{
                 width: 100%;
             }
         }
