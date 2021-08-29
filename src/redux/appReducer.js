@@ -35,7 +35,7 @@ const initialState = {
         {id:6,service_title:"Маркетинг",
             service_text:"Комплексный аутсорсинг управления проектом любой сложности - от общих представительских функций и маркетинга/рекламы, до открытия компании и постановки системы маркетинга и продаж"},
     ],
-    year_on_market: "7",
+    year_on_market: "8",
     year_cash_flow: "24.000.000",
     count_ready_startup: "31",
     count_seller_project: "16",
